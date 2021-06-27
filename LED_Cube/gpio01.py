@@ -1,4 +1,4 @@
-# First GPIO Programming Guide for GPIO
+# First GPIO Programming Guide for LED Cube
 import RPi.GPIO as GPIO
 from time import sleep
 
@@ -13,6 +13,32 @@ def resetlayer(x):
         for i in range(0,3):
                 GPIO.output(LAYER[i],False)
 
+# Layers
+GPIO.setup(32, GPIO.OUT)
+GPIO.setup(36, GPIO.OUT)
+GPIO.setup(38, GPIO.OUT)
+GPIO.setup(40, GPIO.OUT)
+
+# Individual LED
+GPIO.setup(7, GPIO.OUT)
+GPIO.setup(11, GPIO.OUT)
+GPIO.setup(37, GPIO.OUT)
+GPIO.setup(35, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
+GPIO.setup(33, GPIO.OUT)
+GPIO.setup(31, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(15, GPIO.OUT)
+GPIO.setup(29, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(19, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(22, GPIO.OUT)
+GPIO.setup(21, GPIO.OUT)
+
+
+
 def main():
     
     GPIO.setwarnings(False)
@@ -23,6 +49,8 @@ def main():
     for i in range (0,3):
         GPIO.setup(LAYER[i], GPIO.OUT)
 
+    reset(GRID)
+    resetlayer(LAYER)
 
     key = input("Testing Each LED. Press Any Key To Continue...")
     for i in range(0,15):
@@ -31,6 +59,9 @@ def main():
         print("Starting LED on Pin Number: "+ str(GRID[i]))
         GPIO.output(GRID[i],False)
         sleep(1)
+    
+    reset(GRID)
+    resetlayer(LAYER)
     
     key = input("Now testing Layers. Press Any Key To Continue...")
     for i in range (0,3):
