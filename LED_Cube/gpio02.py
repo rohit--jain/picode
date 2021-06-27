@@ -11,5 +11,5 @@ def main():
     GPIO.output(7,False)
     GPIO.cleanup()
     print("Done")
-    
-if __name__ == "__main":main()
+
+if __name__ == "__main__":main()
