@@ -3,12 +3,13 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 def main():
+    pin_number= input("Please Enter The Pin Number:")
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(7, GPIO.OUT)
-    GPIO.output(7,True)
+    GPIO.setup(pin_number, GPIO.OUT)
+    GPIO.output(pin_number,True)
     sleep(1)
-    GPIO.output(7,False)
+    GPIO.output(pin_number,False)
     GPIO.cleanup()
     print("Done")
 
