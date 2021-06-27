@@ -4,10 +4,18 @@ from time import sleep
 
 GRID = [7,11,35,37,12,13,31,33,15,16,23,29,18,19,21,22]
 LAYER = [40,38,36,32]
+VGRID = [37,33,29,22,35,31,23,21,11,13,16,19,7,12,15,18]
+
+def reset(x):
+        for i in range(0,15):
+                GPIO.output(GRID[i],False)
+def resetlayer(x):
+        for i in range(0,3):
+                GPIO.output(LAYER[i],False)
 
 def main():
     
-    GPIO.cleanup()
+    GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
     for i in range(0,15):
