@@ -8,7 +8,7 @@ def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin_number, GPIO.OUT)
     GPIO.output(pin_number,True)
-    sleep(1)
+    key = input("press enter to finish...")
     GPIO.output(pin_number,False)
     GPIO.cleanup()
     print("Done")
