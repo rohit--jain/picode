@@ -7,7 +7,14 @@ LAYER = [40,38,36,32]
 
 def main():
     
+    GPIO.cleanup()
     GPIO.setmode(GPIO.BOARD)
+
+    for i in range(0,15):
+        GPIO.setup(GRID[i], GPIO.OUT)
+    for i in range (0,3):
+        GPIO.setup(LAYER[i], GPIO.OUT)
+
 
     key = input("Testing Each LED. Press Any Key To Continue...")
     for i in range(0,15):
@@ -24,6 +31,8 @@ def main():
         print("Starting LAYER on Pin Number: "+ str(LAYER[i]))
         GPIO.output(LAYER[i],False)
         sleep(1)
+    
+    GPIO.cleanup()
     print("Testing Complete")
 
 
