@@ -9,6 +9,7 @@ def main():
     GPIO.output(7,True)
     sleep(1)
     GPIO.output(7,False)
+    GPIO.cleanup()
     print("Done")
     
 if __name__ == "__main":main()
