@@ -24,3 +24,5 @@ def main():
     
     key_value = input("Press [ENTER] Key to Finish...")
     GPIO.cleanup()
+
+if __name__ == "__main__":main()
