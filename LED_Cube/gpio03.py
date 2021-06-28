@@ -17,10 +17,11 @@ def main():
             for y in x:
                 GPIO.setup(y, GPIO.OUT)
                 GPIO.output(y, True)
-                sleep(0.5)
+                
     for z in leds["layers"]:
         GPIO.setup(z, GPIO.OUT)
         GPIO.output(z, True)
+        sleep(0.5)
     
     key_value = input("Press [ENTER] Key to Finish...")
     GPIO.cleanup()
